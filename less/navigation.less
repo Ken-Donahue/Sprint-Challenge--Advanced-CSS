@@ -1,1 +1,30 @@
 // Navigation code here
+.navBar {
+  width: 100%;
+  .flex(column, center);
+  padding: 0 10%;
+  background: @nav-bg;
+  border-bottom: 1px solid @nav-border;
+
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding: 2% 0 1%;
+  } // h1
+
+  nav {
+    @media @phone {
+      padding: 0;
+      justify-content: space-around;
+    }
+    .flex(row, space-evenly);
+    padding: 0 23%;
+
+    a {
+      font-size: 1.6rem;
+      color: @nav-font;
+      text-decoration: none;
+      padding: 2% 0;
+    }
+  } // nav
+} // .navBar
