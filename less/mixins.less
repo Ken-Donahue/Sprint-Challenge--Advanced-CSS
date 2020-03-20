@@ -1,1 +1,36 @@
 // Mixins Here
+.flex(@direction, @justify) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+}
+
+.button(@bgColor, @fontColor, @width) {
+  @media @phone {
+    width: 100%;
+    padding: 4% 0;
+    margin-bottom: 3%;
+  }
+  background: @bgColor;
+  color: @fontColor;
+  text-align: center;
+  font-size: 1.7rem;
+  width: @width;
+  padding: 2% 0;
+  border: 1px solid @btn-bg-color;
+  border-radius: 5px;
+}
+
+.mobileImg() {
+  @media @phone {
+    width: 90%;
+    margin: 4% auto 2%;
+  }
+}
+
+.animateImg() {
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

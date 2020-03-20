@@ -1,17 +1,19 @@
 // Home Content
 
 .home {
-
   .intro {
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
 
     h2 {
       padding: 15px;
     }
 
     p {
-      padding:0 15px;
+      padding: 0 15px;
     }
-  
   }
 
   .space-images {
@@ -19,11 +21,22 @@
     flex-wrap: wrap;
     width: 100%;
 
+    img:nth-of-type(2),
+    img:last-of-type {
+      @media @phone {
+        display: none;
+      }
+    }
+
     img {
+      .mobileImg();
       width: 28%;
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+      &:hover {
+        .animateImg();
+      }
     }
   }
 
@@ -40,6 +53,12 @@
   }
 
   .walk {
+    @media @phone {
+      width: 100%;
+      margin-top: 4%;
+      padding: 0 3%;
+      .flex(column-reverse, center);
+    }
     margin-top: 60px;
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
@@ -47,6 +66,9 @@
     justify-content: center;
 
     .walk-text {
+      @media @phone {
+        width: 100%;
+      }
       width: 50%;
 
       h3 {
@@ -58,18 +80,28 @@
       }
 
       .btn {
-      }
-    }
+        .button(@btn-bg-color, white, 30%);
+        &:hover {
+          background: white;
+          color: @btn-bg-color;
+          cursor: pointer;
+        } // hover
+      } // .btn
+    } // .walk-text
 
     .walk-img {
+      @media @phone {
+        width: 97%;
+        margin: 4% auto;
+      }
       width: 46%;
       margin-left: 4%;
-      
+
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
-      }
-    }
-  }
-}// home
+      } // img
+    } //.walk-img
+  } // .walk
+} // home
